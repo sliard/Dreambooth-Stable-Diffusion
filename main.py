@@ -833,8 +833,6 @@ if __name__ == "__main__":
             except Exception:
                 melk()
                 raise
-        if not opt.no_test and not trainer.interrupted:
-            trainer.test(model, data)
     except Exception:
         if opt.debug and trainer.global_rank == 0:
             try:
