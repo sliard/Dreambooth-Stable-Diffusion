@@ -579,6 +579,8 @@ if __name__ == "__main__":
         opt.base = base_configs + opt.base
         _tmp = logdir.split("/")
         nowname = _tmp[-1]
+    if opt.logdir:
+        logdir = opt.logdir
     else:
         if opt.name:
             name = "_" + opt.name
