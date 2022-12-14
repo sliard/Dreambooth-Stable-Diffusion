@@ -579,22 +579,8 @@ if __name__ == "__main__":
         opt.base = base_configs + opt.base
         _tmp = logdir.split("/")
         nowname = _tmp[-1]
-    if opt.logdir:
-        logdir = opt.logdir
     else:
-        if opt.name:
-            name = "_" + opt.name
-        elif opt.base:
-            cfg_fname = os.path.split(opt.base[0])[-1]
-            cfg_name = os.path.splitext(cfg_fname)[0]
-            name = "_" + cfg_name
-        else:
-            name = ""
-
-        if opt.datadir_in_name:
-            now = os.path.basename(os.path.normpath(opt.data_root)) + now
-            
-        nowname = now + name + opt.postfix
+        nowname = opt.name
         logdir = os.path.join(opt.logdir, nowname)
 
     ckptdir = os.path.join(logdir, "checkpoints")
